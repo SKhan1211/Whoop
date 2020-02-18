@@ -8,7 +8,8 @@ class BusinessShowPhotos extends React.Component {
     this.state = {
       showModal: false,
       modalPhoto: "",
-      selectedPhoto: ''
+      selectedPhoto: '',
+      selectedPhotoDate: ''
     };
 
     this.showModal = this.showModal.bind(this);
@@ -16,7 +17,9 @@ class BusinessShowPhotos extends React.Component {
   }
 
   showModal(event) {
-    this.setState({ showModal: true, modalPhoto: event.target.src, selectedPhoto: event.target.dataset.key })
+    let date = new Date(event.target.dataset.date).toString().split(" ");
+    let dateStr = date[1] + ", " + date[2] + " " + date[3];
+    this.setState({ showModal: true, modalPhoto: event.target.src, selectedPhoto: event.target.dataset.key, selectedPhotoDate: dateStr  })
 
     const container = document.getElementsByClassName('business-show-container')
     if (container.length > 0) {
@@ -29,7 +32,7 @@ class BusinessShowPhotos extends React.Component {
         event.target.className === 'show-close-container' ||
         event.target.className === 'close-modal-text' ||
         event.target.className === 'close-modal') {
-      this.setState({ showModal: false, modalPhoto: '', selectedPhoto: '' })
+      this.setState({ showModal: false, modalPhoto: '', selectedPhoto: '', selectedPhotoDate: '' })
       const container2 = document.getElementsByClassName(
         "business-show-container-hidden"
       );
@@ -40,9 +43,6 @@ class BusinessShowPhotos extends React.Component {
   }
 
   render() {
-    let date = new Date(this.props.date).toString().split(" ");
-    let dateStr = date[1] + ", " + date[2] + " " + date[3];
-
     const postModal = (
       <div className="show-full-modal-container" onClick={this.closeModal}>
         <div className="show-inner-modal-text-container">
@@ -54,7 +54,7 @@ class BusinessShowPhotos extends React.Component {
               <img src={this.state.modalPhoto} alt="uploaded-photo"/>
               <div className="show-left-text-container">
                 <div className="left-text-container-positioning">
-                  <p>{dateStr}</p>
+                  <p>{this.state.selectedPhotoDate}</p>
                   <div className="show-left-divider-bar"></div>
                   <h3>{this.props.uploader}</h3>
                 </div>
@@ -68,7 +68,7 @@ class BusinessShowPhotos extends React.Component {
                 {this.props.allPhotos.map(photo => {
                   let imgClass;
                   photo._id === this.state.selectedPhoto ? imgClass = 'show-right-photos-selected' : imgClass = 'show-picture-holder'
-                  return <li className="show-right-photos" key={photo._id}><img className={imgClass} src={photo.photoURL} data-key={photo._id} alt="photo-img" onClick={this.showModal} /></li>}
+                  return <li className="show-right-photos" key={photo._id}><img className={imgClass} src={photo.photoURL} data-key={photo._id} data-date={photo.date} alt="photo-img" onClick={this.showModal} /></li>}
                 )}
                 </ul>
             </div>
@@ -79,7 +79,7 @@ class BusinessShowPhotos extends React.Component {
 
     return (
       <li className="business-show-photo-li">
-        <img className="business-show-photo-img" data-key={this.props.photoD._id} src={this.props.photo} onClick={this.showModal}/>
+        <img className="business-show-photo-img" data-key={this.props.photoD._id} data-date={this.props.photoD.date} src={this.props.photo} onClick={this.showModal}/>
         { this.state.showModal ? postModal : null } 
       </li>
     )
