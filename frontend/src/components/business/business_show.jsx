@@ -12,16 +12,6 @@ class BusinessShow extends React.Component {
     super(props)
     this.state = {
       businessData: {},
-      testImages: [
-        "https://s3-media0.fl.yelpcdn.com/bphoto/UzrNIkdGTZ1-cXuQDsKUmA/o.jpg",
-        "https://s3-media0.fl.yelpcdn.com/bphoto/Gb2XQgCm_Nz1uHMl8CuhuQ/o.jpg",
-        "https://s3-media0.fl.yelpcdn.com/bphoto/5SCcuSSC7_ivmRFR3i_l5A/o.jpg",
-        "https://s3-media0.fl.yelpcdn.com/bphoto/L86ElZwBriULwCqaemB5gw/o.jpg",
-        "https://s3-media0.fl.yelpcdn.com/bphoto/VzVjR_JpC2Rr3DnuNvwePg/o.jpg",
-        "https://s3-media0.fl.yelpcdn.com/bphoto/59C7YiFTPLBCiIZsqRUAGA/o.jpg",
-        "https://s3-media0.fl.yelpcdn.com/bphoto/OZt17s2S0T_Fr_Haw-N8sA/o.jpg",
-        "https://s3-media0.fl.yelpcdn.com/bphoto/px4ZjOgY51ZUEimUnIGJGA/o.jpg",
-      ],
       businessPhotos: []
     };
 

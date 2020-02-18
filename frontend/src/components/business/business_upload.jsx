@@ -21,6 +21,7 @@ class BusinessUpload extends React.Component {
     photoFile.append('uploaderUsername', `${this.props.username}`) // Append the username to the req.body as uploaderUsername so we can attach to photo modal
     addBusinessPhoto(this.props.businessId, photoFile) // Dispatch our action 
     this.props.history.push(`/businesses/${this.props.businessId}`) // Redirect back to business show page
+    window.location.reload();
   }
 
   render() {

@@ -33,7 +33,7 @@ class Search extends React.Component {
       return "5e449188acf32d81822aa762";
     } else if (['nightlife', 'drinking', 'bars', 'party', 'club', 'dance', 'dancing', 'partying', 'clubbing'].includes(businesses.toLowerCase())) {
       return "5e449188acf32d81822aa763";
-    } else if (['beauty', 'spas', 'spa', 'beauty and spas', 'beauty and spa', 'beauty spa', 'nails', 'massage'].includes(businesses.toLowerCase())) {
+    } else if (['beauty', 'spas', 'spa', 'beauty and spas', 'beauty and spa', 'beauty spa', 'nails', 'massage', 'spabeauty'].includes(businesses.toLowerCase())) {
       return "5e449188acf32d81822aa765";
     } else if (['active', 'active life', 'fitness', 'hiking', 'outdoors'].includes(businesses.toLowerCase())) {
       return "5e449188acf32d81822aa764";
