@@ -245,6 +245,7 @@ cursor: pointer;
     width: 100%;
     object-fit: cover;
     height: 100%;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 1096px) {
@@ -467,8 +468,10 @@ cursor: pointer;
     border-radius: 7px;
     border: 3px solid #0097EC;
     opacity: 0.5;
+    cursor: pointer;
 }
 
 .show-picture-holder {
     display: block;
+    cursor: pointer;
 }

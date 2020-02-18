@@ -56,6 +56,7 @@ class BusinessReview extends React.Component {
     submitReview() {
         this.props.addBusinessReview(this.state);
         this.props.history.push(`/businesses/${this.props.businessId}`)
+        window.location.reload();
     }
     
     render(){
