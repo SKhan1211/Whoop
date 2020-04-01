@@ -292,20 +292,18 @@
 
 .app-images {
     display: flex;
-    padding-bottom: 23px;
+    padding-bottom: 35px;
     flex-wrap: wrap;
     justify-content: center;
 }
 
 .apple {
-    margin: 15px;
+    margin: 22px 35px 15px 35px;
 }
 
 .apple {
     height: 250px;
     width: 450px;
-    border: 1px solid rgb(226, 224, 224);
-    border-radius: 5px;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -314,35 +312,29 @@
 .apple img {
     height: 250px;
     width: 450px;
-}
-
-.app-images-text {
-    padding-right: 45px;
-    margin-top: 14px;
-}
-
-.app-images-text p:first-child {
-    font-size: 1.5rem;
-    padding-bottom: 12px;
-}
-
-.app-images-text i {
-    padding: 0px 10px 4px 0px;
-}
-
-.app-images-text a {
-    text-decoration: none;
-    color: black;
-    font-size: 1.1rem;
-}
-
-.app-images-text a:hover {
-    color: #D32322;
+    border: 1px solid rgb(226, 224, 224);
+    border-radius: 5px;
 }
 
 .bottom {
     display: flex;
     align-items: flex-end;
+}
+
+.developers-text a {
+    color: black;
+    align-self: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.developers-text p {
+    text-align: center;
+}
+
+.developers-text a:hover {
+    color: #D32322;
 }
 
 

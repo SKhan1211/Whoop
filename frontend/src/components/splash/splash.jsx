@@ -179,17 +179,23 @@ class Splash extends React.Component {
           <div className="apps">
             <span>Whoop Developers</span>
             <div className="app-images">
-              <div className="apple">
-                <a href="https://www.thesuhaibkhan.com"><img src="/static/images/suhaibkhan.png" /></a>
+              <div className="developers-text">
+                <div className="apple">
+                  <a href="https://www.thesuhaibkhan.com"><img src="/static/images/suhaibkhan.png" /></a>
+                </div>
+                <a href="https://www.thesuhaibkhan.com"><p>Suhaib Khan</p></a>
               </div>
-              <div className="apple">
-                <img height="152" width="130" src="/static/images/cindykuo.png" />
+              <div className="developers-text">
+                <div className="apple">
+                  <a href="https://www.cindycwkuo.com"><img height="152" width="130" src="/static/images/cindykuo.png" /></a>
+                </div>
+                <a href="https://www.cindycwkuo.com"><p>Cindy Kuo</p></a>
               </div>
             </div>
           </div>
         </div>
         <div className="bottom" onClick={this.closeDisplay}>
-          <a href="https://www.cindycwkuo.com"><img className="building" src="/static/images/footer.png" /></a>
+          <img className="building" src="/static/images/footer.png" />
         </div>
       </div>
     );
