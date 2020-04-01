@@ -86,9 +86,6 @@ class Splash extends React.Component {
         <div className="top" onClick={this.closeDisplay}>
           <div className="nav">
             <div className="nav-left">
-              <span>Write a Review</span>
-              <span>Events</span>
-              <span>Talk</span>
             </div>
             {this.displayLoggedNav()}
             {/* <div className="nav-right">
@@ -183,26 +180,16 @@ class Splash extends React.Component {
             <span>Whoop Developers</span>
             <div className="app-images">
               <div className="apple">
-                <img src="https://www.thesuhaibkhan.com/images/myavatar.jpg" height="100"/>
-                <p>Suhaib Khan</p>
-                <p><i class="fab fa-linkedin"></i>LinkedIn</p>
-                <p><i class="fab fa-github"></i>Github</p>
-                <p><i class="fab fa-angellist"></i>AngelList</p>
-                <p><i class="fas fa-user"></i>Portfolio</p>
+                <a href="https://www.thesuhaibkhan.com"><img src="/static/images/suhaibkhan.png" /></a>
               </div>
               <div className="apple">
-                <img height="100" width="90" src="https://www.cindycwkuo.com/images/prof2.png" />
-                <p>Cindy Kuo</p>
-                <p><i class="fab fa-linkedin"></i>LinkedIn</p>
-                <p><i class="fab fa-github"></i>Github</p>
-                <p><i class="fab fa-angellist"></i>AngelList</p>
-                <p><i class="fas fa-user"></i>Portfolio</p>
+                <img height="152" width="130" src="/static/images/cindykuo.png" />
               </div>
             </div>
           </div>
         </div>
         <div className="bottom" onClick={this.closeDisplay}>
-          <img className="building" src="/static/images/footer.png" />
+          <a href="https://www.cindycwkuo.com"><img className="building" src="/static/images/footer.png" /></a>
         </div>
       </div>
     );
