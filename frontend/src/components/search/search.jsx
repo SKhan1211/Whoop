@@ -15,14 +15,21 @@ class Search extends React.Component {
   }
 
   componentDidMount() {
-    this.props
-      .fetchByCategory(this.fetchCategoryId())
-      .then(stores => {
-        return this.setState({ stores: stores.businesses.data })
-      })
-      .catch(err => console.log("No businesses to display"))
-
-    
+    if (this.state.parsedQuery === '') {
+      this.props
+        .fetchByCategory(this.fetchCategoryId())
+        .then(stores => {
+          return this.setState({ stores: stores.businesses.data })
+        })
+        .catch(err => console.log("Something went wrong"))
+    } else {
+      this.props  
+        .fetchAllBusinesses()
+        .then(stores => {
+          return this.setState({ stores: stores.businesses.data })
+        })
+        .catch(err => console.log("Something went wrong"))
+    }
   }
 
   fetchCategoryId() {

@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 import Search from "./search";
-import { fetchByCategory } from '../../actions/categories_actions';
+import { fetchByCategory, fetchAllBusinesses } from '../../actions/categories_actions';
 import { fetchBusiness, fetchBusinessPhotos } from "../../actions/businesses_actions";
 
 const mapStateToProps = (state, ownProps) => ({
@@ -11,7 +11,8 @@ const mapStateToProps = (state, ownProps) => ({
 const mapDispatchToProps = dispatch => ({
   fetchBusiness: businessId => dispatch(fetchBusiness(businessId)),
   fetchByCategory: categoryId => dispatch(fetchByCategory(categoryId)),
-  fetchBusinessPhotos: businessId => dispatch(fetchBusinessPhotos(businessId))
+  fetchBusinessPhotos: businessId => dispatch(fetchBusinessPhotos(businessId)),
+  fetchAllBusinesses: () => dispatch(fetchAllBusinesses())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Search);

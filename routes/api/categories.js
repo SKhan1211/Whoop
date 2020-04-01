@@ -8,4 +8,10 @@ router.get('/:category_id', (req, res) => {
     .catch(err => res.status(404).json({ nobusinessesfound: 'No businesses found' }))
 });
 
+router.get('/', (req, res) => {
+  Business.find()
+    .then(categories => res.json(categories))
+    .catch(err => res.status(404).json({ nonefound: 'No businesses available' }))
+});
+
 module.exports = router;
