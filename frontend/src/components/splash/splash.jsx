@@ -180,14 +180,24 @@ class Splash extends React.Component {
             </div>
           </div>
           <div className="apps">
-            <span>Whoop Mobile Apps</span>
+            <span>Whoop Developers</span>
             <div className="app-images">
-              <a href="https://www.apple.com/ios/app-store/">
-                <img className="apple" src="/static/images/apple.png" />
-              </a>
-              <a href="https://play.google.com/store/apps?&utm_source=na_Med&utm_medium=hasem&utm_content=Jul0119&utm_campaign=Evergreen&pcampaignid=MKT-DR-na-us-1000189-Med-hasem-ap-Evergreen-Jul0119-Text_Search_SKWS-id_100744_%7cEXA%7cONSEM_kwid_43700045371544925&gclid=CjwKCAiAvonyBRB7EiwAadauqTgOMDkhILxIv-PZNO77ZhCVDQRXCxarwNysr14DuYQoI39f6hCW4xoCZSgQAvD_BwE&gclsrc=aw.ds">
-                <img className="android" src="/static/images/android.png" />
-              </a>
+              <div className="apple">
+                <img src="https://www.thesuhaibkhan.com/images/myavatar.jpg" height="100"/>
+                <p>Suhaib Khan</p>
+                <p><i class="fab fa-linkedin"></i>LinkedIn</p>
+                <p><i class="fab fa-github"></i>Github</p>
+                <p><i class="fab fa-angellist"></i>AngelList</p>
+                <p><i class="fas fa-user"></i>Portfolio</p>
+              </div>
+              <div className="apple">
+                <img height="100" width="90" src="https://www.cindycwkuo.com/images/prof2.png" />
+                <p>Cindy Kuo</p>
+                <p><i class="fab fa-linkedin"></i>LinkedIn</p>
+                <p><i class="fab fa-github"></i>Github</p>
+                <p><i class="fab fa-angellist"></i>AngelList</p>
+                <p><i class="fas fa-user"></i>Portfolio</p>
+              </div>
             </div>
           </div>
         </div>

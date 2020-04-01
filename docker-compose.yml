@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  web:
+    build: .
+    image: skhan1211/whoop
+    ports:
+      - 5000:5000
+    environment: 
+      - MONGO_URI=mongodb+srv://dev:V4GEAofNrGluB1QE@whoopdb-aid2z.mongodb.net/test?retryWrites=true&w=majority
+      - SECRET_OR_KEY=Iu7Diwj(=!P}kX6?5ikf:>+n3+b/i@
+    env_file:
+      - ./frontend/.env
