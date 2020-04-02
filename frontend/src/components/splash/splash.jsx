@@ -173,7 +173,15 @@ class Splash extends React.Component {
                 data-business="homeservices"
                 onClick={this.redirectToSearch}
               />
-              <img className="more" src="/static/images/more.png" />
+              <div 
+                className="more"
+                src="/static/images/more.png"
+                data-business="all"
+                onClick={this.redirectToSearch}
+              >
+                <p>. . .</p>
+                <p>Browse all businesses</p>
+              </div>
             </div>
           </div>
           <div className="apps">

@@ -83,7 +83,9 @@ class Search extends React.Component {
             or <span onClick={this.handleTryClick}> "<span className="search-inside-paren">cars</span>"</span>
           </p>
         </div>
-       )} else {
+       )} else if (this.state.parsedQuery.businesses === 'all') {
+          return null;
+       } else {
           return (
             <div className="search-sorry">
               <p>Sorry, no results for: "{this.state.parsedQuery.businesses}"</p>
