@@ -148,3 +148,23 @@
   height: 130px;
   z-index: 1000;
 }
+
+.search-sorry {
+  margin-top: 10px;
+}
+
+.search-sorry > p:last-child {
+  margin-top: 6px;
+  font-size: 0.9rem;
+}
+
+.search-sorry span {
+  color: #D32322;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.search-inside-paren:hover {
+  text-decoration: underline;
+}
+
