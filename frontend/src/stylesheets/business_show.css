@@ -60,6 +60,7 @@
     -webkit-box-shadow: 10px 3px 10px 3px rgb(235, 235, 235);
     box-shadow:         10px 3px 10px 3px rgb(235, 235, 235);
     width: 11%;   
+    min-width: 180px;
 }
 
 .business-number {

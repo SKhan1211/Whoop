@@ -3,7 +3,7 @@ import {
   RECEIVE_BUSINESS_PHOTO,
   RECEIVE_BUSINESS_PHOTOS
 } from "../actions/businesses_actions";
-import { FETCH_BY_CATEGORY } from '../actions/categories_actions';
+import { FETCH_BY_CATEGORY, FETCH_ALL_BUSINESSES } from '../actions/categories_actions';
 
 export default function (state = {}, action) {
   Object.freeze(state);
@@ -16,6 +16,8 @@ export default function (state = {}, action) {
       return (Object.assign({}, state, action.businessPhoto))
     case RECEIVE_BUSINESS_PHOTOS:
       return (Object.assign({}, state, { photos: action.businessPhotos }))
+    case FETCH_ALL_BUSINESSES:
+      return (Object.assign({}, state, action.businesses))
     default:
       return state;
   }

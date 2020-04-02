@@ -5,6 +5,16 @@ import SearchItem from './search_item';
 import searchCSS from '../../stylesheets/search.css';
 const queryString = require("query-string");
 
+const KEYWORDS = [
+  'restaurants', 'fast food', 'food', 'foods', 'restaurant', 
+  'shopping', 'clothes', 'toys', 'purses', 
+  'nightlife', 'drinking', 'bars', 'party', 'club', 'dance', 'dancing', 'partying', 'clubbing',
+  'beauty', 'spas', 'spa', 'beauty and spas', 'beauty and spa', 'beauty spa', 'nails', 'massage', 'spabeauty',
+  'active', 'active life', 'fitness', 'hiking', 'outdoors',
+  'auto', 'cars', 'mechanic', 'automotive', 'car', 'body shop', 'mufflers', 'paintjob',
+  'cleaning', 'handyman', 'home services', 'home', 'home repairs', 'repairman', 'water heater', 'air conditioning', 'homeservices'
+]
+
 class Search extends React.Component {
   constructor(props) {
     super(props);
@@ -12,17 +22,26 @@ class Search extends React.Component {
       parsedQuery: queryString.parse(this.props.history.location.search),
       stores: []
     };
+
+    this.handleTryClick = this.handleTryClick.bind(this);
   }
 
   componentDidMount() {
-    this.props
-      .fetchByCategory(this.fetchCategoryId())
-      .then(stores => {
-        return this.setState({ stores: stores.businesses.data })
-      })
-      .catch(err => console.log("No businesses to display"))
-
-    
+    if (KEYWORDS.includes(this.state.parsedQuery.businesses)) {
+      this.props
+        .fetchByCategory(this.fetchCategoryId())
+        .then(stores => {
+          return this.setState({ stores: stores.businesses.data })
+        })
+        .catch(err => console.log("Something went wrong"))
+    } else {
+      this.props  
+        .fetchAllBusinesses()
+        .then(stores => {
+          return this.setState({ stores: stores.businesses.data })
+        })
+        .catch(err => console.log("Something went wrong"))
+    }
   }
 
   fetchCategoryId() {
@@ -44,6 +63,43 @@ class Search extends React.Component {
     }
   }
 
+  handleTryClick(event) {
+    const { push } = this.props.history;
+    push(`/search?businesses=${event.target.innerText}&location=San%20Francisco,%20CA`);
+    window.location.reload();
+  }
+
+  showNoResults() {
+    if (!KEYWORDS.includes(this.state.parsedQuery.businesses)) {
+      if (this.state.parsedQuery.businesses === '') {
+      return (
+        <div className="search-sorry">
+          <p>Sorry, no results</p>
+          <p>
+            Try 
+            <span onClick={this.handleTryClick}> "<span className="search-inside-paren">food</span>"</span>, 
+            <span onClick={this.handleTryClick}> "<span className="search-inside-paren">shopping</span>"</span>, 
+            <span onClick={this.handleTryClick}> "<span className="search-inside-paren">drinking</span>"</span>, 
+            or <span onClick={this.handleTryClick}> "<span className="search-inside-paren">cars</span>"</span>
+          </p>
+        </div>
+       )} else {
+          return (
+            <div className="search-sorry">
+              <p>Sorry, no results for: "{this.state.parsedQuery.businesses}"</p>
+              <p>
+                Try
+                <span onClick={this.handleTryClick}> "<span className="search-inside-paren">food</span>"</span>, 
+                <span onClick={this.handleTryClick}> "<span className="search-inside-paren">shopping</span>"</span>, 
+                <span onClick={this.handleTryClick}> "<span className="search-inside-paren">drinking</span>"</span>, 
+                or <span onClick={this.handleTryClick}> "<span className="search-inside-paren">cars</span>"</span> 
+              </p>
+            </div>
+          )
+       } 
+    };
+  }
+
   render() {
     const { businesses, location } = this.state.parsedQuery; 
     const style = {
@@ -57,6 +113,7 @@ class Search extends React.Component {
         <div className="search-bottom-container">
           <div className="search-left-half">
             <p className="search-result-header">Browsing San Francisco, CA Businesses</p>
+            {this.showNoResults()}
             <div className="search-results">
               <p className="all-results">All Results</p>
               <ul>

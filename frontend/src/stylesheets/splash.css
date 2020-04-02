@@ -26,6 +26,7 @@
     font-weight: bold;
     margin-top: 60px;
     margin-right: 26%;
+    width: 22%;
 }
 
 .nav-left span {
@@ -283,37 +284,57 @@
     margin-top: 50px;
     width: 100%;
 }
-.apps span {
+.apps span:first-child {
    color: #D32322;
    font-size: 23px;
    height: 30px; 
 }
 
-.app-images img {
-    margin: 15px;
+.app-images {
+    display: flex;
+    padding-bottom: 35px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.apple {
+    margin: 22px 35px 15px 35px;
 }
 
 .apple {
     height: 250px;
     width: 450px;
-    border: 1px solid rgb(226, 224, 224);
-    border-radius: 5px;
-    cursor: pointer;
-
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 
-.android {
+.apple img {
     height: 250px;
     width: 450px;
     border: 1px solid rgb(226, 224, 224);
     border-radius: 5px;
-    cursor: pointer;
-
 }
 
 .bottom {
     display: flex;
     align-items: flex-end;
+}
+
+.developers-text a {
+    color: black;
+    align-self: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.developers-text p {
+    text-align: center;
+}
+
+.developers-text a:hover {
+    color: #D32322;
 }
 
 
