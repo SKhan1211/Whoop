@@ -246,6 +246,26 @@
     padding-left: 15px;
 }
 
+.category-bottom div {
+    margin-left: 15px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.more p:first-child {
+    font-size: 42px;
+}
+
+.more p:last-child {
+    font-size: 15px;
+    font-family: sans-serif;
+    font-weight: 600;
+    padding-top: 14px;
+}
+
 .spa {
     height: 140px;
     width: 230px;
