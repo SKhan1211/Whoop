@@ -24,3 +24,5 @@ jobs:
         with:
           configurationFile: renovate-config.json
           token: 'x-access-token:${{ steps.get_token.outputs.app_token }}'
+        env:
+          LOG_LEVEL: 'debug'
