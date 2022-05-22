@@ -1,0 +1,27 @@
+{
+  "branchPrefix": "deps/",
+  "dryRun": true,
+  "username": "SKhan1211",
+  "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
+  "onboarding": false,
+  "platform": "github",
+  "includeForks": false,
+  "repositories": [
+    "SKhan1211/Whoop"
+  ],
+  "packageRules": [
+    {
+      "description": "lockFileMaintenance",
+      "matchUpdateTypes": [
+        "pin",
+        "digest",
+        "patch",
+        "minor",
+        "major",
+        "lockFileMaintenance"
+      ],
+      "dependencyDashboardApproval": false,
+      "stabilityDays": 0
+    }
+  ]
+}
