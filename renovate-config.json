@@ -1,6 +1,6 @@
 {
   "branchPrefix": "deps/",
-  "dryRun": true,
+  "dryRun": "full",
   "username": "SKhan1211",
   "gitAuthor": "Renovate Bot <bot@renovateapp.com>",
   "onboarding": false,
