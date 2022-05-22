@@ -1,0 +1,42 @@
+.splash-searchbar .form-inline {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.splash-searchbar .form-control {
+    width: 500px;
+    height: 50px;
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: 1px solid rgb(131, 130, 130);
+    border-radius: 4px 0px 0px 4px;
+}
+
+.splash-searchbar .map-search {
+    width: 500px;
+    height: 50px;
+    padding: 6px;
+    margin-top: 8px;
+    font-size: 17px;
+    border: 1px solid rgb(131, 130, 130); 
+    /* border-radius: 0px 0px 0px 4px; */
+}
+
+.splash-searchbar .search {
+    margin-top: 8px;
+    border-radius: 0 4px 4px 0;
+    border: 0;
+    background: #d32323;
+    padding: 14px 20px 13px;
+    box-shadow: none;
+    font-size: 15px;
+}
+
+.splash-searchbar .fa-search {
+    height: 10px;
+    width: 30px;
+    color: white;
+    cursor: pointer;
+}

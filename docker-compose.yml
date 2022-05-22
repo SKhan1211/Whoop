@@ -1,0 +1,13 @@
+version: '3.3'
+
+services:
+  web:
+    build: .
+    image: skhan1211/whoop
+    ports:
+      - 5000:5000
+    environment: 
+      - MONGO_URI=${mongoURI}
+      - SECRET_OR_KEY=${secretOrKey}
+    env_file:
+      - ./frontend/.env
